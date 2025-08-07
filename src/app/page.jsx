@@ -21,6 +21,7 @@ export default function Home() {
 						</p>
 						{/* button and socials */}
 						<div className="flex flex-col md:flex-row items-center gap-8">
+							<a href="/resume.pdf" download="resume.pdf">
 							<Button
 								className={
 									"hover:bg-accent hover:text-white font-semibold border-accent rounded-2xl"
@@ -29,6 +30,8 @@ export default function Home() {
 								<span>Download CV</span>
 								<FiDownload className="text-xl" />
 							</Button>
+							</a>
+							
 							<Social />
 						</div>
 					</div>
