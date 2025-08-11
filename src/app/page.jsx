@@ -11,7 +11,7 @@ export default function Home() {
 				<div className="md:mt-0 mt-10 flex flex-col-reverse gap-10 md:gap-20 lg:flex-row items-center justify-between lg:pt-4 pb-10">
 					{/* text */}
 					<div className="text-center md:text-left md:order-none">
-						<span>Software Developer</span>
+						<span>Full stack Developer</span>
 						<h1 className="h1">
 							Hello I'm <br /> <span className="text-accent">Nafiz Uddowla</span>
 						</h1>
@@ -27,7 +27,7 @@ export default function Home() {
 									"hover:bg-accent hover:text-white font-semibold border-accent rounded-2xl"
 								} variant={'outline'}
 							>
-								<span>Download CV</span>
+								<span>Download Resume</span>
 								<FiDownload className="text-xl" />
 							</Button>
 							</a>

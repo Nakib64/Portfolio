@@ -39,6 +39,17 @@ const projects = [
 		live: "https://wholesale-11b32.web.app/",
 		github: "https://github.com/Nakib64/WholeSaleMarket",
 	},
+	{
+		num: "03",
+		category: "fullstack",
+		title: "Plants Care",
+		desciption:
+			"A responsive, full-stack Plant Care Management app where users can monitor plant health, track watering schedules, and manage plant data. Users can add or remove plants based on categories and receive helpful guidance for better plant care. Built with the MERN stack and robust CRUD functionality (POST, PUT, PATCH, DELETE).",
+		stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
+		image: "/plantscare.png",
+		live: "https://plants-b7145.web.app/",
+		github: "https://github.com/Nakib64/PlantCare",
+	},
 ];
 
 const page = () => {
@@ -61,7 +72,7 @@ const page = () => {
 			}}
 			className="min-h-[80vh] flex flex-col justify-center py-12  lg:px-0"
 		>
-			<div className="container mx-auto 2xl:max-w-7xl">
+			<div className="container mx-auto 2xl:max-w-7xl px-4">
 				<div className="flex flex-col lg:flex-row lg:gap-7.5">
 					<div className="w-full lg:w-[50%] lg:h-[460px] flex flex-col lg:justify-between order-2 lg:order-none">
 						<div className="flex flex-col gap-7.5 h-1/2">

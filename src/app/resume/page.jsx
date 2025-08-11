@@ -10,19 +10,27 @@ import {
 } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import { motion, px } from "framer-motion";
+import { BiLogoMongodb } from "react-icons/bi";
+import { SiFirebase } from "react-icons/si";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+	Tooltip,
+	TooltipContent,
+	TooltipProvider,
+	TooltipTrigger,
+} from "@/components/ui/tooltip";
 const about = {
 	title: "About Me",
-	description: "Hi there! I'm Nakib, a full-stack web developer with a strong focus on building modern, scalable, and high-performance web applications. I specialize in the MERN stack (MongoDB, ExpressJs, React, NodeJs), along with clean, responsive UI design using Tailwind CSS, HTML, and CSS.",
+	description:
+		"Hi there! I'm Nakib, a full-stack web developer with a strong focus on building modern, scalable, and high-performance web applications. I specialize in the MERN stack (MongoDB, ExpressJs, React, NodeJs), along with clean, responsive UI design using Tailwind CSS, HTML, and CSS.",
 	info: [
 		{
 			fieldName: "Name",
 			fieldvalue: "Nafiz Uddowla Nakib",
 		},
-		
+
 		{
 			fieldName: "Phone",
 			fieldvalue: "880 1315168075",
@@ -74,33 +82,36 @@ const skills = {
 	description: "",
 	skillList: [
 		{
-			icon: <FaHtml5 />,
-			name: "HTML 5",
-		},
-		{
-			icon: <FaCss3 />,
-			name: "CSS 3",
-		},
-		{
-			icon: <FaJs />,
-			name: "Javascript",
+			icon: <SiNextdotjs />,
+			name: "Next.js",
 		},
 		{
 			icon: <FaReact />,
 			name: "React.js",
 		},
 		{
-			icon: <SiNextdotjs />,
-			name: "Next.js",
+			icon: <FaNodeJs />,
+			name: "node.js",
+		},
+		{
+			icon: <BiLogoMongodb />,
+			name: "MongoDB",
+		},
+		{
+			icon: <SiFirebase />
+,
+			name: "Firebase Auth",
 		},
 		{
 			icon: <SiTailwindcss />,
 			name: "Tailwind.css",
 		},
+	
 		{
-			icon: <FaNodeJs />,
-			name: "node.js",
+			icon: <FaJs />,
+			name: "Javascript",
 		},
+
 		{
 			icon: <FaFigma />,
 			name: "figma",
@@ -136,34 +147,35 @@ const page = () => {
 					<div className=" w-full">
 						{/* skills */}
 						<TabsContent value="skills" className={"w-full h-full container mx-auto"}>
-                            <div className="flex flex-col gap-[30px]">
-                                <div className="flex flex-col gap-[30px] text-center md:text-left">
-                                    <h3 className="text-4xl font-bold">{skills.title}</h3>
-                                    <p className="max-w-[600px] text-white/60 mx-auto md:mx-0">{skills.description}</p>
-                                </div>
-                                <ul className="grid grid-cols-2 md:grid-cols-3 gap-7.5 ">
-                                    {skills.skillList.map((skill, index)=>{
-                                        return (
-                                            <li key={index} className="flex justify-center">
-                                                <TooltipProvider delayDuration={100}>
-                                                    <Tooltip>
-                                                        <TooltipTrigger className="w-full h-37.5 bg-[#232329] rounded-xl flex justify-center items-center group">
-                                                            <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                                                {skill.icon}
-                                                            </div>
-                                                        </TooltipTrigger>
-                                                        <TooltipContent>
-                                                            <p >{skill.name}</p>
-                                                        </TooltipContent>
-                                                    </Tooltip>
-                                                </TooltipProvider>
-                                                
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </TabsContent>
+							<div className="flex flex-col gap-[30px]">
+								<div className="flex flex-col gap-[30px] text-center md:text-left">
+									<h3 className="text-4xl font-bold">{skills.title}</h3>
+									<p className="max-w-[600px] text-white/60 mx-auto md:mx-0">
+										{skills.description}
+									</p>
+								</div>
+								<ul className="grid grid-cols-2 md:grid-cols-3 gap-7.5 ">
+									{skills.skillList.map((skill, index) => {
+										return (
+											<li key={index} className="flex justify-center">
+												<TooltipProvider delayDuration={100}>
+													<Tooltip>
+														<TooltipTrigger className="w-full h-37.5 bg-[#232329] rounded-xl flex justify-center items-center group">
+															<div className="text-6xl group-hover:text-accent transition-all duration-300">
+																{skill.icon}
+															</div>
+														</TooltipTrigger>
+														<TooltipContent>
+															<p>{skill.name}</p>
+														</TooltipContent>
+													</Tooltip>
+												</TooltipProvider>
+											</li>
+										);
+									})}
+								</ul>
+							</div>
+						</TabsContent>
 						{/* experience */}
 						<TabsContent value="experience">
 							<div className="w-full h-full flex justify-center text-center flex-col gap-10">
@@ -209,29 +221,26 @@ const page = () => {
 						</TabsContent>
 						{/* about me */}
 						<TabsContent value="about me" className={" text-center md:text-left"}>
-                            <div className="flex flex-col gap-7.5  mx-auto ">
-                                <h3 className="text-4xl font-bold">
-                                    {about.title}
-                                </h3>
-                                <h3 className="max-w-[600px] text-white/60 mx-auto">
-                                    {about.description}
-                                </h3>
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 max-w-[620px] mx-auto md:mx-0">
-                                    {about.info.map((item, index)=>{
-                                        return(
-                                            <li className="flex items-center justify-center md:justify-start gap-4 " key={index}>
-                                                <span className="text-white/60">
-                                                    {item.fieldName}
-                                                </span>
-                                                <span className="text-xl">
-                                                    {item.fieldvalue}
-                                                </span>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </TabsContent>
+							<div className="flex flex-col gap-7.5  mx-auto ">
+								<h3 className="text-4xl font-bold">{about.title}</h3>
+								<h3 className="max-w-[600px] text-white/60 mx-auto">
+									{about.description}
+								</h3>
+								<ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 max-w-[620px] mx-auto md:mx-0">
+									{about.info.map((item, index) => {
+										return (
+											<li
+												className="flex items-center justify-center md:justify-start gap-4 "
+												key={index}
+											>
+												<span className="text-white/60">{item.fieldName}</span>
+												<span className="text-xl">{item.fieldvalue}</span>
+											</li>
+										);
+									})}
+								</ul>
+							</div>
+						</TabsContent>
 					</div>
 				</Tabs>
 			</div>

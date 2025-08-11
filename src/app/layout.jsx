@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className="dark">
-			<body className={`cutive-mono-regular antialiased mt-5`}>
+			<body className={`cutive-mono-regular antialiased min-h-screen pt-5`}>
 				<Header></Header>
 				<StairTransition />
 				<PageTransition>{children}</PageTransition>
