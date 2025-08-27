@@ -16,7 +16,7 @@ const Header = () => {
 				<div className="hidden md:flex gap-8 items-center">
 					<Nav></Nav>
 					<Link href="/contact">
-                        <Button className={'hover:bg-accent hover:text-white font-semibold'}>Hire me</Button>
+                        <Button className={'hover:bg-accent hover:text-white font-semibold'}>Contact</Button>
                     </Link>
 				</div>
 				{/* mobile nav */}
