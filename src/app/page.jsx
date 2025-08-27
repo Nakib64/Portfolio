@@ -21,17 +21,20 @@ export default function Home() {
 						</p>
 						{/* button and socials */}
 						<div className="flex flex-col md:flex-row items-center gap-8">
-							<a href="/resume.pdf" download="resume.pdf">
-							<Button
-								className={
-									"hover:bg-accent hover:text-white font-semibold border-accent rounded-2xl"
-								} variant={'outline'}
+							<a
+								href="https://drive.google.com/uc?export=download&id=17tbmzYnAh621bFaHYgwdM0M6SHrSpOhB"
+								target="_blank"
+								rel="noopener noreferrer"
 							>
-								<span>Download Resume</span>
-								<FiDownload className="text-xl" />
-							</Button>
+								<Button
+									className="hover:bg-accent hover:text-white font-semibold border-accent rounded-2xl"
+									variant="outline"
+								>
+									<span>Download Resume</span>
+									<FiDownload className="text-xl" />
+								</Button>
 							</a>
-							
+
 							<Social />
 						</div>
 					</div>

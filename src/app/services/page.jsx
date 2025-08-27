@@ -10,14 +10,14 @@ const services = [
     title: "Frontend Development",
     description:
       "Build responsive, fast, and user-friendly frontend websites tailored to your business needs.",
-    href: "#",
+    href: "/contact",
   },
   {
     num: "02",
     title: "Full Stack Development",
     description:
       "Build functional, SEO-friendly, fast full stack websites tailored to your business needs.",
-    href: "#",
+    href: "/contact",
   },
 ];
 

@@ -28,11 +28,12 @@ const info = [
 ];
 
 const Page = () => {
-	const [status, setStatus] = useState("");
+	const [status, setStatus] = useState("Send");
 	const [loading, setloading] = useState(false);
+	const [title, setTitle] = useState('')
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setStatus(true);
+		setloading(true);
 		const form = e.target;
 
 		setStatus("Sending...");
@@ -46,11 +47,12 @@ const Page = () => {
 			)
 			.then(
 				() => {
-					setStatus("✅ Message sent successfully!");
+					setStatus("send")
+					
 					setloading(false);
 					form.reset();
 					Swal.fire({
-						title: status,
+						title: "✅ Message sent successfully!",
 						showClass: {
 							popup: `
       animate__animated
@@ -69,25 +71,25 @@ const Page = () => {
 				},
 				(error) => {
 					setloading(false);
+					setStatus("Send")
 					console.error("EmailJS Error:", error);
-					setStatus("❌ Failed to send message.");
-                    Swal.fire({
-  title: status,
-  showClass: {
-    popup: `
+					Swal.fire({
+						title: "❌ Failed to send message.",
+						showClass: {
+							popup: `
       animate__animated
       animate__fadeInUp
       animate__faster
-    `
-  },
-  hideClass: {
-    popup: `
+    `,
+						},
+						hideClass: {
+							popup: `
       animate__animated
       animate__fadeOutDown
       animate__faster
-    `
-  }
-});
+    `,
+						},
+					});
 				}
 			);
 	};
@@ -114,24 +116,9 @@ const Page = () => {
 
 							{/* input */}
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-								<Input
-									type="text"
-									name="name"
-									placeholder="Firstname"
-									required
-								/>
-								<Input
-									type="text"
-									name="from_lastname"
-									placeholder="Lastname"
-									required
-								/>
-								<Input
-									type="email"
-									name="email"
-									placeholder="Email address"
-									required
-								/>
+								<Input type="text" name="name" placeholder="Firstname" required />
+
+								<Input type="email" name="email" placeholder="Email address" required />
 							</div>
 
 							{/* select */}
@@ -142,8 +129,12 @@ const Page = () => {
 								<SelectContent>
 									<SelectGroup>
 										<SelectLabel>Select a service</SelectLabel>
-										<SelectItem value="Frontend Development">Frontend Development</SelectItem>
-										<SelectItem value="Full stack Development">Fullstack Development</SelectItem>
+										<SelectItem value="Frontend Development">
+											Frontend Development
+										</SelectItem>
+										<SelectItem value="Full stack Development">
+											Fullstack Development
+										</SelectItem>
 									</SelectGroup>
 								</SelectContent>
 							</Select>
@@ -165,10 +156,9 @@ const Page = () => {
 								disabled={loading}
 							>
 								{loading && <span className="loading loading-dots loading-md"></span>}
-								Send message
+								{status}
 							</Button>
-
-									</form>
+						</form>
 					</div>
 
 					{/* info */}

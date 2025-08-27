@@ -4,45 +4,43 @@ import { usePathname } from "next/navigation";
 import React from "react";
 
 const Nav = () => {
-	const pathname = usePathname();
-	console.log(pathname);
-	const links = [
-		{
-			name: "Home",
-			path: "/",
-		},
-		{
-			name: "Services",
-			path: "/services",
-		},
-		{
-			name: "Resume",
-			path: "/resume",
-		},
-		{
-			name: "work",
-			path: "/work",
-		},
-		{
-			name: "Contact",
-			path: "/contact",
-		},
-	];
-	return (
-		<nav className="flex gap-8">
-			{links.map((link) => {
-				return (
-					<Link
-                     href={link.path}
-                    key={link.path}
-                    className={`${link.path == pathname && "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all`}
-                     >
-						{link.name}
-					</Link>
-				);
-			})}
-		</nav>
-	);
+  const pathname = usePathname();
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Resume", path: "/resume" },
+    { name: "Work", path: "/work" },
+    { name: "Contact", path: "/contact" },
+  ];
+
+  return (
+    <nav className="flex gap-8">
+      {links.map((link) => {
+        const isActive = link.path === pathname;
+        return (
+          <Link
+            href={link.path}
+            key={link.path}
+            className={`relative group capitalize font-medium transition-all hover:text-accent ${
+              isActive ? "text-accent" : "text-white"
+            }`}
+          >
+            {link.name}
+
+            {/* animated underline */}
+            <span
+              className={`
+                absolute left-0 bottom-0 w-full h-[2px] bg-accent
+                transform scale-x-0 origin-left transition-transform duration-300
+                ${isActive ? "scale-x-100" : ""}
+                group-hover:scale-x-100
+              `}
+            ></span>
+          </Link>
+        );
+      })}
+    </nav>
+  );
 };
 
 export default Nav;

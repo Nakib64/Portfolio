@@ -21,6 +21,8 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 const about = {
 	title: "About Me",
 	description:
@@ -98,15 +100,14 @@ const skills = {
 			name: "MongoDB",
 		},
 		{
-			icon: <SiFirebase />
-,
+			icon: <SiFirebase />,
 			name: "Firebase Auth",
 		},
 		{
 			icon: <SiTailwindcss />,
 			name: "Tailwind.css",
 		},
-	
+
 		{
 			icon: <FaJs />,
 			name: "Javascript",
@@ -127,7 +128,7 @@ const page = () => {
 				opacity: 1,
 				transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
 			}}
-			className="min-h-[80vh] flex items-center justify-center py-12 md:py-4 "
+			className="min-h-[85vh] flex items-center justify-center py-12 md:py-4 "
 		>
 			<div className="container mx-auto 2xl:max-w-7xl px-2">
 				<Tabs
@@ -135,7 +136,7 @@ const page = () => {
 					className="flex flex-col lg:flex-row gap-[60px] items-center"
 				>
 					<TabsList
-						className={"flex flex-col w-full max-w-[380px] mx-auto md:mx-0 gap-6"}
+						className={"flex flex-col justify-center w-full max-w-[380px] mx-auto md:mx-0 gap-6"}
 					>
 						<TabsTrigger value="skills">Skills</TabsTrigger>
 						<TabsTrigger value="experience">Experience</TabsTrigger>
@@ -148,7 +149,7 @@ const page = () => {
 						{/* skills */}
 						<TabsContent value="skills" className={"w-full h-full container mx-auto"}>
 							<div className="flex flex-col gap-[30px]">
-								<div className="flex flex-col gap-[30px] text-center md:text-left">
+								<div className="flex flex-col gap-[0px] text-center md:text-left">
 									<h3 className="text-4xl font-bold">{skills.title}</h3>
 									<p className="max-w-[600px] text-white/60 mx-auto md:mx-0">
 										{skills.description}
@@ -178,13 +179,122 @@ const page = () => {
 						</TabsContent>
 						{/* experience */}
 						<TabsContent value="experience">
-							<div className="w-full h-full flex justify-center text-center flex-col gap-10">
-								<h1 className="text-4xl font-extrabold hover:text-accent">
+							<div className="w-full h-full flex flex-col items-center text-center gap-8">
+								{/* Title */}
+								<motion.h1
+									className="text-4xl font-extrabold hover:text-accent"
+									initial={{ opacity: 0, y: 40 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6 }}
+								>
 									My Experience
-								</h1>
-								<p className="text-lg font-medium">
-									I am a fresher, I don't have any industrial experience.
-								</p>
+								</motion.h1>
+
+								{/* Description */}
+								<motion.p
+									className="text-lg font-medium text-white/70 max-w-[600px]"
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.6, delay: 0.2 }}
+								>
+									I am a fresher and do not have formal industry experience yet. However,
+									I have built several{" "}
+									<span className="text-accent font-semibold">real-world projects</span>,
+									collaborated in team environments, and developed strong expertise in{" "}
+									<span className="text-accent font-semibold">
+										MERN Stack development
+									</span>
+									.
+								</motion.p>
+
+								{/* Projects / Skills Highlight */}
+								<motion.div
+									className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4"
+									initial="hidden"
+									whileInView="show"
+									variants={{
+										hidden: {},
+										show: { transition: { staggerChildren: 0.15 } },
+									}}
+								>
+									{[
+										{
+											title: "Blood Aid Platform",
+											desc:
+												"Full-stack donation system with dashboards for donors, volunteers, and admin.",
+											stack: [
+												{ name: "React.js" },
+												{ name: "Express.js" },
+												{ name: "MongoDB" },
+											],
+											image: "/bloodaid.png",
+											live: "https://bloodaid-f4332.web.app/",
+											github: "https://github.com/Nakib64/Blood-Aid",
+										},
+										{
+											title: "Wholesale E-Commerce",
+											desc:
+												"B2B e-commerce platform with secure auth, cart, filters, and Stripe payments.",
+											stack: [
+												{ name: "React.js" },
+												{ name: "Express.js" },
+												{ name: "MongoDB" },
+											],
+											live: "https://wholesale-11b32.web.app/",
+											github: "https://github.com/Nakib64/WholeSaleMarket",
+										},
+									].map((exp, index) => (
+										<motion.div
+											key={index}
+											className="p-5 rounded-xl bg-[#232329] hover:bg-[#2e2e36] border border-transparent hover:border-accent shadow-md transition-all duration-300 cursor-pointer space-y-4"
+											variants={{
+												hidden: { opacity: 0, y: 30 },
+												show: { opacity: 1, y: 0 },
+											}}
+										>
+											<h3 className="text-xl font-semibold mb-2">{exp.title}</h3>
+											<p className="text-sm text-white/60">{exp.desc}</p>
+											<ul className="flex gap-4 text-center">
+												{exp.stack.map((item, index) => {
+													return (
+														<li key={index} className="text-md text-accent font-extrabold">
+															{item.name}
+															{index !== exp.stack.length - 1 && ","}
+														</li>
+													);
+												})}
+											</ul>
+											<div className="flex items-center gap-4">
+												{/* live link */}
+												<Link href={exp.live}>
+													<TooltipProvider delayDuration={100}>
+														<Tooltip>
+															<TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
+																<BsArrowUpRight className="text-white text-3xl group-hover:text-accent"></BsArrowUpRight>
+															</TooltipTrigger>
+															<TooltipContent>
+																<p>live project</p>
+															</TooltipContent>
+														</Tooltip>
+													</TooltipProvider>
+												</Link>
+												{/* github link */}
+												<Link href={exp.github}>
+													<TooltipProvider delayDuration={100}>
+														<Tooltip>
+															<TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
+																<BsGithub className="text-white text-3xl group-hover:text-accent"></BsGithub>
+															</TooltipTrigger>
+															<TooltipContent>
+																<p>Github repository</p>
+															</TooltipContent>
+														</Tooltip>
+													</TooltipProvider>
+												</Link>
+											</div>
+										</motion.div>
+									))}
+								</motion.div>
 							</div>
 						</TabsContent>
 						{/* education */}
@@ -220,24 +330,27 @@ const page = () => {
 							</div>
 						</TabsContent>
 						{/* about me */}
-						<TabsContent value="about me" className={" text-center md:text-left"}>
-							<div className="flex flex-col gap-7.5  mx-auto ">
+						<TabsContent
+							value="about me"
+							className="md:flex md:items-start gap-10 text-center md:text-leftf"
+						>
+							{/* Left side - Title & Description */}
+							<div className="flex-1 space-y-6 text-center md:text-left">
 								<h3 className="text-4xl font-bold">{about.title}</h3>
-								<h3 className="max-w-[600px] text-white/60 mx-auto">
+								<p className="text-white/60 max-w-[600px] mx-auto md:mx-0">
 									{about.description}
-								</h3>
-								<ul className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8 max-w-[620px] mx-auto md:mx-0">
-									{about.info.map((item, index) => {
-										return (
-											<li
-												className="flex items-center justify-center md:justify-start gap-4 "
-												key={index}
-											>
-												<span className="text-white/60">{item.fieldName}</span>
-												<span className="text-xl">{item.fieldvalue}</span>
-											</li>
-										);
-									})}
+								</p>
+							</div>
+
+							{/* Right side - Info List */}
+							<div className="flex-1">
+								<ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+									{about.info.map((item, index) => (
+										<li key={index} className="flex flex-col">
+											<span className="text-sm text-white/50">{item.fieldName}</span>
+											<span className="text-lg font-medium">{item.fieldvalue}</span>
+										</li>
+									))}
 								</ul>
 							</div>
 						</TabsContent>
