@@ -42,6 +42,17 @@ const projects = [
 	{
 		num: "03",
 		category: "fullstack",
+		title: "PC-shop",
+		desciption:
+			"PC-Store is a modern e-commerce web application built with the MERN stack and Next.js. It allows users to browse, search, and view products, while admins can manage products and users.",
+		stack: [{ name: "Next.js" },  { name: "MongoDB" }],
+		image: "/eshop.png",
+		live: "https://e-shop-liard-seven.vercel.app/ 	",
+		github: "https://github.com/Nakib64/e-shop",
+	},
+	{
+		num: "04",
+		category: "fullstack",
 		title: "Plants Care",
 		desciption:
 			"A responsive, full-stack Plant Care Management app where users can monitor plant health, track watering schedules, and manage plant data. Users can add or remove plants based on categories and receive helpful guidance for better plant care. Built with the MERN stack and robust CRUD functionality (POST, PUT, PATCH, DELETE).",
