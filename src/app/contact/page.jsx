@@ -27,7 +27,7 @@ const info = [
 	},
 ];
 
-const Page = () => {
+const Contact = () => {
 	const [status, setStatus] = useState("Send");
 	const [loading, setloading] = useState(false);
 	const [title, setTitle] = useState('')
@@ -185,4 +185,4 @@ const Page = () => {
 	);
 };
 
-export default Page;
+export default Contact;

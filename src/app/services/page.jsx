@@ -21,7 +21,7 @@ const services = [
   },
 ];
 
-const Page = () => {
+const Services = () => {
   return (
     <section className="min-h-[calc(100vh-4rem)] flex flex-col justify-center py-12 md:py-0">
       <div className="container mx-auto px-4 2xl:max-w-7xl">
@@ -59,4 +59,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Services;

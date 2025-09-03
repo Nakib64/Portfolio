@@ -63,7 +63,7 @@ const projects = [
 	},
 ];
 
-const page = () => {
+const Work = () => {
 	const [project, setProject] = useState(projects[0]);
 
     const swiper = useSwiper()
@@ -182,4 +182,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default Work;
