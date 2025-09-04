@@ -74,7 +74,7 @@ const education = {
 		{
 			institution: "Apna College",
 			degree: "Web Development",
-			duration: "July-2024 - January-2024",
+			duration: "July-2024 - January-2025",
 		},
 	],
 };
