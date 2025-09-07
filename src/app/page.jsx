@@ -12,7 +12,8 @@ import HomeWorkSec from "./Home_work_sec/workSection";
 
 export default function Home() {
 	return (
-		<div className="px-4">
+		 
+			<div className="px-4 overflow-x-hidden">
 			<MotionSection>
 				<section className="h-full w-full">
 					<div className="mx-auto container h-full 2xl:max-w-7xl mt-10 ">
@@ -56,9 +57,9 @@ export default function Home() {
 				</section>
 			</MotionSection>
 
-			<MotionSection>
+			
 				<HomeWorkSec></HomeWorkSec>
-			</MotionSection>
+		
 
 			<MotionSection>
 				<Resume />
@@ -72,5 +73,7 @@ export default function Home() {
 				<Contact />
 			</MotionSection>
 		</div>
+		 
+		
 	);
 }
