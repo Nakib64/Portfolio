@@ -25,7 +25,19 @@ const projects = [
     github: "https://github.com/Nakib64/Blood-Aid",
   },
   {
-    num: "02",
+		num: "02",
+		category: "fullstack",
+		title: "FitLife",
+		desciption:
+			"FitLife AI Coach is an AI-powered fitness and wellness web application built with Next.js. It provides personalized workout and diet plans, progress tracking, and an AI fitness assistant to guide users in real time. With gamification, multi-language support, and wellness features, the platform helps users stay motivated, healthy, and consistent in their fitness journey.",
+		stack: [{ name: "Next.js" },{ name: "NextAuth" },{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
+		image: "/fitlife.png",
+    video: "/fitlife.mp4",
+		live: "https://fitlife-lac.vercel.app/",
+		github: "https://github.com/Nakib64/Fitlife",
+	},
+  {
+    num: "03",
     title: "Wholesale website",
     desciption:
       "🛒 A responsive full-stack B2B wholesale platform with category-based browsing, secure authentication, and a dynamic cart system.",
@@ -36,29 +48,18 @@ const projects = [
     github: "https://github.com/Nakib64/WholeSaleMarket",
   },
   {
-		num: "03",
-		category: "fullstack",
-		title: "PC-shop",
-		desciption:
-			"PC-Store is a modern e-commerce web application built with the MERN stack and Next.js. It allows users to browse, search, and view products, while admins can manage products and users.",
-		stack: [{ name: "Next.js" },  { name: "MongoDB" }],
-		image: "/eshop.png",
-    video: "/eshop.mp4",
-		live: "https://e-shop-liard-seven.vercel.app/ 	",
-		github: "https://github.com/Nakib64/e-shop",
-	},
-	{
 		num: "04",
 		category: "fullstack",
-		title: "Plants Care",
+		title: "Airbnb",
 		desciption:
-			"A responsive, full-stack Plant Care Management app where users can monitor plant health, track watering schedules, and manage plant data. Users can add or remove plants based on categories and receive helpful guidance for better plant care. Built with the MERN stack and robust CRUD functionality (POST, PUT, PATCH, DELETE).",
-		stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
-		image: "/plantscare.png",
-    video: "/plant.mp4",
-		live: "https://plants-b7145.web.app/",
-		github: "https://github.com/Nakib64/PlantCare",
+			"A modern Airbnb homepage clone with additional routes, detailed pages, smooth animations, and a beautiful responsive UI. This project is built to showcase frontend and backend integration using Next.js, TypeScript, shadcn/ui, Framer Motion, MongoDB, and Express.js.",
+		stack: [{ name: "TypeScript" }, { name: "Next.js" }, { name: "MongoDB" }],
+		image: "/airbnb.png",
+    video: "/airbnb.mp4",
+		live: "https://airbnb-five-xi.vercel.app/",
+		github: "https://github.com/Nakib64/Airbnb/",
 	},
+	
 ];
 
 // animation helpers
