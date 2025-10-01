@@ -13,60 +13,65 @@ import {
 } from "@/components/ui/tooltip";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import Image from "next/image";
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper/modules';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper/modules";
 const projects = [
-	{
-		num: "01",
-		category: "fullstack",
-		title: "Blood Aid",
-		desciption:
-			"BloodAid is a modern full-stack blood donation platform built using the MERN stack (MongoDB, Express, React, Node.js) and Firebase Authentication. It empowers users to request or donate blood, manage donation statuses, explore verified donors, and handle admin operations with ease. The goal is to make life-saving connections seamless and accessible.",
-		stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
-		image: "/bloodaid.png",
-		live: "https://bloodaid-f4332.web.app/",
-		github: "https://github.com/Nakib64/Blood-Aid",
-	},
-	{
+  {
+    num: "01",
+    title: "Blood Aid",
+    desciption:
+      "BloodAid is a modern full-stack blood donation platform built using the MERN stack and Firebase Authentication.\n \n Admin email: nafiz2282@gmail.com\n Password: Nakib1",
+    stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
+    image: "/bloodaid.png",
+    video: "/bloodaid.mp4",
+    live: "https://bloodaid-f4332.web.app/",
+    github: "https://github.com/Nakib64/Blood-Aid",
+  },
+  {
 		num: "02",
 		category: "fullstack",
-		title: "Wholesale website",
+		title: "FitLife",
 		desciption:
-			"🛒 A responsive full-stack B2B wholesale platform with category-based browsing, secure authentication, and a dynamic cart system. Built with React, Node.js, Express & MongoDB. 🧩 Stack: React, Tailwind CSS, Swiper.js, Node.js, Express, MongoDB",
-		stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
-		image: "/whoelsale.png",
-		live: "https://wholesale-11b32.web.app/",
-		github: "https://github.com/Nakib64/WholeSaleMarket",
+			"FitLife AI Coach is an AI-powered fitness and wellness web application built with Next.js. It provides personalized workout and diet plans, progress tracking, and an AI fitness assistant to guide users in real time. With gamification, multi-language support, and wellness features, the platform helps users stay motivated, healthy, and consistent in their fitness journey.",
+		stack: [{ name: "Next.js" },{ name: "NextAuth" },{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
+		image: "/fitlife.png",
+    video: "/fitlife.mp4",
+		live: "https://fitlife-lac.vercel.app/",
+		github: "https://github.com/Nakib64/Fitlife",
 	},
-	{
-		num: "03",
-		category: "fullstack",
-		title: "PC-shop",
-		desciption:
-			"PC-Store is a modern e-commerce web application built with the MERN stack and Next.js. It allows users to browse, search, and view products, while admins can manage products and users.",
-		stack: [{ name: "Next.js" },  { name: "MongoDB" }],
-		image: "/eshop.png",
-		live: "https://e-shop-liard-seven.vercel.app/ 	",
-		github: "https://github.com/Nakib64/e-shop",
-	},
-	{
+  {
+    num: "03",
+    title: "Wholesale website",
+    desciption:
+      "🛒 A responsive full-stack B2B wholesale platform with category-based browsing, secure authentication, and a dynamic cart system.",
+    stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
+    image: "/whoelsale.png",
+    video: "/wholesale.mp4",
+    live: "https://wholesale-11b32.web.app/",
+    github: "https://github.com/Nakib64/WholeSaleMarket",
+  },
+  {
 		num: "04",
 		category: "fullstack",
-		title: "Plants Care",
+		title: "Airbnb",
 		desciption:
-			"A responsive, full-stack Plant Care Management app where users can monitor plant health, track watering schedules, and manage plant data. Users can add or remove plants based on categories and receive helpful guidance for better plant care. Built with the MERN stack and robust CRUD functionality (POST, PUT, PATCH, DELETE).",
-		stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
-		image: "/plantscare.png",
-		live: "https://plants-b7145.web.app/",
-		github: "https://github.com/Nakib64/PlantCare",
+			"A modern Airbnb homepage clone with additional routes, detailed pages, smooth animations, and a beautiful responsive UI. This project is built to showcase frontend and backend integration using Next.js, TypeScript, shadcn/ui, Framer Motion, MongoDB, and Express.js.",
+		stack: [{ name: "TypeScript" }, { name: "Next.js" }, { name: "MongoDB" }],
+		image: "/airbnb.png",
+    video: "/airbnb.mp4",
+		live: "https://airbnb-five-xi.vercel.app/",
+		github: "https://github.com/Nakib64/Airbnb/",
 	},
+	
 ];
 
 const Work = () => {
 	const [project, setProject] = useState(projects[0]);
 
-    const swiper = useSwiper()
+
+	
+	const swiper = useSwiper();
 	const handleslideChange = (swiper) => {
 		// geet current slide index
 		const currentIndex = swiper.activeIndex;
@@ -96,7 +101,7 @@ const Work = () => {
 								{project.title}
 							</h2>
 							{/* project description */}
-							<p className="text-white/60">{project.desciption}</p>
+							<p className="text-white/60 whitespace-pre-line">{project.desciption}</p>
 							{/* stack */}
 							<ul className="flex gap-4">
 								{project.stack.map((item, index) => {
@@ -143,17 +148,17 @@ const Work = () => {
 					</div>
 					<div className="w-full lg:w-[50%] ">
 						<Swiper
-                         modules={[Navigation, Pagination]}
+							modules={[Navigation, Pagination]}
 							spaceBetween={30}
-                            navigation
-                              pagination={{ clickable: true }}
+							navigation
+							pagination={{ clickable: true }}
 							slidesPerView={1}
 							className="lg:h-[520px] mb-12"
 							onSlideChange={handleslideChange}
 						>
 							{projects.map((project, index) => {
 								return (
-									<SwiperSlide key={index}  className="w-full">
+									<SwiperSlide key={index} className="w-full">
 										<div className="h-115 relative group flex justify-center items-center bg-pink-50/20">
 											{/* overlay */}
 											<div className="absolute top-0 bottom-0 w-full hover: bg-black/10 z-10"></div>
@@ -167,14 +172,14 @@ const Work = () => {
 												></Image>
 											</div>
 										</div>
-                                        <p className="text-gray-400 italic text-center">[Swipe the image to view more]</p>
+										<p className="text-gray-400 italic text-center">
+											[Swipe the image to view more]
+										</p>
 									</SwiperSlide>
 								);
 							})}
 							{/* slider buttions */}
-							
 						</Swiper>
-                      
 					</div>
 				</div>
 			</div>

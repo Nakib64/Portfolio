@@ -17,7 +17,7 @@ const projects = [
     num: "01",
     title: "Blood Aid",
     desciption:
-      "BloodAid is a modern full-stack blood donation platform built using the MERN stack and Firebase Authentication.",
+      "BloodAid is a modern full-stack blood donation platform built using the MERN stack and Firebase Authentication.\n \n Admin email: nafiz2282@gmail.com\n Password: Nakib1",
     stack: [{ name: "React.js" }, { name: "Express.js" }, { name: "MongoDB" }],
     image: "/bloodaid.png",
     video: "/bloodaid.mp4",
@@ -133,7 +133,7 @@ const ProjectCard = ({ project, reverse, isMobile }) => {
         <h2 className="text-3xl md:text-4xl font-bold text-white">
           {project.title}
         </h2>
-        <p className="text-white/70">{project.desciption}</p>
+        <p className="text-white/70 whitespace-pre-line">{project.desciption}</p>
 
         <ul className="flex gap-4 flex-wrap justify-center lg:justify-start">
           {project.stack.map((s, i) => (
