@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
+import { toast } from "sonner";
 
 const info = [
 	{ icon: <FaPhoneAlt />, title: "Whatsapp", description: "(+880) 1315 168075" },
@@ -30,7 +31,7 @@ const info = [
 const Contact = () => {
 	const [status, setStatus] = useState("Send");
 	const [loading, setloading] = useState(false);
-	const [title, setTitle] = useState('')
+	const [title, setTitle] = useState("");
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setloading(true);
@@ -47,49 +48,18 @@ const Contact = () => {
 			)
 			.then(
 				() => {
-					setStatus("send")
-					
+					setStatus("send");
+
 					setloading(false);
 					form.reset();
-					Swal.fire({
-						title: "✅ Message sent successfully!",
-						showClass: {
-							popup: `
-      animate__animated
-      animate__fadeInUp
-      animate__faster
-    `,
-						},
-						hideClass: {
-							popup: `
-      animate__animated
-      animate__fadeOutDown
-      animate__faster
-    `,
-						},
-					});
+					toast("✅ Message sent! I’ll be in touch with you soon. 😊");
 				},
 				(error) => {
 					setloading(false);
-					setStatus("Send")
+					setStatus("Send");
 					console.error("EmailJS Error:", error);
-					Swal.fire({
-						title: "❌ Failed to send message.",
-						showClass: {
-							popup: `
-      animate__animated
-      animate__fadeInUp
-      animate__faster
-    `,
-						},
-						hideClass: {
-							popup: `
-      animate__animated
-      animate__fadeOutDown
-      animate__faster
-    `,
-						},
-					});
+					toast("🛠️ Message delivery failed! Looks like a server glitch. Try again soon. ⚙️");
+
 				}
 			);
 	};

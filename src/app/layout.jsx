@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata = {
 	title: "Nafiz's Portfolio",
@@ -15,7 +16,8 @@ export default function RootLayout({ children }) {
 			
 			<body className={`cutive-mono-regular antialiased min-h-screen `}>
 				<Header></Header>
-				<StairTransition />
+				<StairTransition  />
+				 <Toaster position="top-center"/>
 				<PageTransition>{children}</PageTransition>
 			</body>
 		</html>
