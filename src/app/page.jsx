@@ -12,8 +12,8 @@ import HomeWorkSec from "./Home_work_sec/workSection";
 
 export default function Home() {
 	return (
-		 
-			<div className="px-4 overflow-x-hidden">
+
+		<div className="px-4 overflow-hidden">
 			<MotionSection>
 				<section className="h-full w-full">
 					<div className="mx-auto container h-full 2xl:max-w-7xl mt-10 ">
@@ -24,7 +24,7 @@ export default function Home() {
 								<h1 className="h1">
 									Hello I'm <br /> <span className="text-accent">Nafiz Uddowla</span>
 								</h1>
-								<p className="max-w-[500px] mb-9 text-white/80">
+								<p className="max-w-[500px] mb-9 text-foreground/80">
 									I excel at crafting elegant digital experiences and I am profiecient in
 									web development and its technologies.
 								</p>
@@ -36,7 +36,7 @@ export default function Home() {
 										rel="noopener noreferrer"
 									>
 										<Button
-											className="hover:bg-accent hover:text-white font-semibold border-accent rounded-2xl"
+											className="hover:bg-accent hover:text-accent-foreground font-semibold border-accent rounded-2xl"
 											variant="outline"
 										>
 											<span>Download Resume</span>
@@ -57,9 +57,9 @@ export default function Home() {
 				</section>
 			</MotionSection>
 
-			
-				<HomeWorkSec></HomeWorkSec>
-		
+
+			<HomeWorkSec></HomeWorkSec>
+
 
 			<MotionSection>
 				<Resume />
@@ -73,7 +73,7 @@ export default function Home() {
 				<Contact />
 			</MotionSection>
 		</div>
-		 
-		
+
+
 	);
 }

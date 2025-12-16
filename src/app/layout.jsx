@@ -10,14 +10,19 @@ export const metadata = {
 	description: "",
 };
 
+import Background3D from "@/components/Background3D";
+import ScrollProgress from "@/components/ScrollProgress";
+
+
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className="dark">
-			
+		<html lang="en" className="dark" suppressHydrationWarning>
 			<body className={`cutive-mono-regular antialiased min-h-screen `}>
-				<Header></Header>
-				<StairTransition  />
-				 <Toaster position="top-center"/>
+				<Background3D />
+				<ScrollProgress />
+				<Header />
+				<StairTransition />
+				<Toaster position="top-center" />
 				<PageTransition>{children}</PageTransition>
 			</body>
 		</html>

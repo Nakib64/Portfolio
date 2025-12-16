@@ -78,11 +78,11 @@ const Contact = () => {
 					{/* form */}
 					<div className="lg:h-[54%] lg:w-9/12">
 						<form
-							className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl w-full"
+							className="flex flex-col gap-6 p-10 bg-secondary/30 backdrop-blur-md border border-white/10 rounded-xl w-full"
 							onSubmit={handleSubmit}
 						>
 							<h3 className="text-4xl text-accent">Let's work together</h3>
-							<p className="text-white/60"></p>
+							<p className="text-muted-foreground"></p>
 
 							{/* input */}
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -137,11 +137,11 @@ const Contact = () => {
 							{info.map((item, index) => {
 								return (
 									<li key={index} className="flex items-center gap-6">
-										<div className="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+										<div className="w-[52px] h-[52px] lg:w-[72px] lg:h-[72px] bg-secondary/30 backdrop-blur-md text-accent rounded-md flex items-center justify-center">
 											<div className="text-[28px]">{item.icon}</div>
 										</div>
 										<div>
-											<p className="text-white/60">{item.title}</p>
+											<p className="text-muted-foreground">{item.title}</p>
 											<p className="text-xl">{item.description}</p>
 										</div>
 									</li>

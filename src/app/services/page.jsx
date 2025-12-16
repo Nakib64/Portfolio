@@ -42,14 +42,14 @@ const Services = () => {
                   </div>
                   <Link
                     href={service.href}
-                    className="w-[70px] h-[70px] rounded-full bg-white group-hover:bg-accent  transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                    className="w-[70px] h-[70px] rounded-full bg-primary group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
                   >
-                    <BsArrowDownRight className="text-black text-3xl" />
+                    <BsArrowDownRight className="text-primary-foreground text-3xl" />
                   </Link>
                 </div>
                 <h2 className="text-xl md:text-2xl font-semibold group-hover:text-accent tracking-widest">{service.title}</h2>
-                <p className="text-white/80">{service.description}</p>
-                <div className="border-b border-white/20 w-full" />
+                <p className="text-muted-foreground">{service.description}</p>
+                <div className="border-b border-border w-full" />
               </div>
             </div>
           ))}

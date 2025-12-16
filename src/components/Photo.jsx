@@ -13,10 +13,10 @@ const Photo = () => {
 					opacity: 1,
 					transition: { delay: 2, duration: 0.4, ease: "easeIn" },
 				}}
-				className="absolute top-1/2 left-1/2 w-[200px] h-[200px] md:w-[350px] md:h-[350px] -translate-x-1/2 -translate-y-1/2 mix-blend-lighten"
+				className="absolute top-1/2 left-1/2 w-[200px] h-[200px] md:w-[350px] md:h-[350px] -translate-x-1/2 -translate-y-1/2"
 			>
 				<Image
-					src={"/photo.png"}
+					src={"/profile.png"}
 					priority
 					quality={100}
 					fill
@@ -47,6 +47,7 @@ const Photo = () => {
 						cy="253"
 						r="200"
 						stroke="#00ff99"
+						className="stroke-accent"
 						strokeWidth="4"
 						strokeLinecap="round"
 						strokeLinejoin="round"

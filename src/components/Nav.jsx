@@ -10,7 +10,7 @@ const Nav = () => {
     { name: "Services", path: "/services" },
     { name: "Resume", path: "/resume" },
     { name: "Work", path: "/work" },
- ];
+  ];
 
   return (
     <nav className="flex gap-8">
@@ -20,9 +20,8 @@ const Nav = () => {
           <Link
             href={link.path}
             key={link.path}
-            className={`relative group capitalize font-medium transition-all hover:text-accent ${
-              isActive ? "text-accent" : "text-white"
-            }`}
+            className={`relative group capitalize font-medium transition-all hover:text-accent ${isActive ? "text-accent" : "text-foreground"
+              }`}
           >
             {link.name}
 
