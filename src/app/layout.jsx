@@ -13,7 +13,6 @@ export const metadata = {
 import Background3D from "@/components/Background3D";
 import ScrollProgress from "@/components/ScrollProgress";
 
-
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className="dark" suppressHydrationWarning>
@@ -23,7 +22,9 @@ export default function RootLayout({ children }) {
 				<Header />
 				<StairTransition />
 				<Toaster position="top-center" />
-				<PageTransition>{children}</PageTransition>
+				<div className="md:pt-10">
+					<PageTransition>{children}</PageTransition>
+				</div>
 			</body>
 		</html>
 	);
